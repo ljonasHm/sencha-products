@@ -1,0 +1,6 @@
+
+[
+    {"id": 1, "name": "Notebook Lenovo", "description": "Ноутбук ThinkPad T460 14''FHD", "price": 100, "number": 2},
+    {"id": 2, "name": "Keyboard OKLICK", "description": "Клавиатура oklick 140m", "price": 50, "number": 8},
+    {"id": 3, "name": "Network adapter", "description": "Сетевой адаптер WiFi D-Link", "price": 7, "number": 0} 
+]   
