@@ -882,13 +882,10 @@ $include-products-model-productsmodel: dynamic(true);;
 $include-products-store-productlist: dynamic(true);;
 $include-products-view-card-card: dynamic(true);;
 $include-products-view-list-list: dynamic(true);;
-$include-products-view-list-listcontroller: dynamic(true);;
 $include-products-view-login-login: dynamic(true);;
 $include-products-view-login-logincontroller: dynamic(true);;
-$include-products-view-login-loginmodel: dynamic(true);;
 $include-products-view-main-main: dynamic(true);;
 $include-products-view-main-maincontroller: dynamic(true);;
-$include-products-view-main-mainmodel: dynamic(true);;
 $output-paths: ("path": "../../classic/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

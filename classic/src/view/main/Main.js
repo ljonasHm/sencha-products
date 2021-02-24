@@ -7,12 +7,8 @@
  */
 Ext.define('Products.view.main.Main', {
     extend: 'Ext.container.Viewport',
-    requires: [
-        'Ext.layout.container.Border',
-        'Products.view.list.List'
-    ],
+    xtype: 'main',
     controller: 'main',
-    layout: 'border',
 
     items: [
         {

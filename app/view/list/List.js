@@ -1,6 +1,4 @@
-/**
- * This view is an example list of people.
- */
+
 Ext.define('Products.view.list.List', {
     extend: 'Ext.Container',
     controller: 'main',
@@ -16,8 +14,6 @@ Ext.define('Products.view.list.List', {
                     xtype: 'textfield',
                     name: 'id',
                     fieldLabel: 'id',
-                    allowBlank: false,
-                    enableKeyEvents: true,
                     listeners: {
                         specialKey: 'applyFilter'
                     }
@@ -26,8 +22,6 @@ Ext.define('Products.view.list.List', {
                     xtype: 'textfield',
                     name: 'description',
                     fieldLabel: 'Описание',
-                    allowBlank: false,
-                    enableKeyEvents: true,
                     listeners: {
                         specialKey: 'applyFilter'
                     }
@@ -68,11 +62,6 @@ Ext.define('Products.view.list.List', {
             listeners: {
                 'cellClick': 'onCellClick'
             }
-
-            // listeners: {
-            //     select: 'onItemSelected'
-            // }
         }
-        
     ]
 });

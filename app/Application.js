@@ -10,7 +10,6 @@ Ext.define('Products.Application', {
         'Root@Products.controller'
     ],
 
-
     name: 'Products',
 
     quickTips: false,
@@ -18,14 +17,6 @@ Ext.define('Products.Application', {
         desktop: {
             quickTips: true
         }
-    },
-
-    stores: [
-        // TODO: add global / shared stores here
-    ],
-
-    launch: function () {
-        // TODO - Launch the application
     },
 
     onAppUpdate: function () {

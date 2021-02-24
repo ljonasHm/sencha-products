@@ -7,21 +7,7 @@
 Ext.define('Products.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
-    requires: [
-        'Products.view.list.List'
-    ],
-
     alias: 'controller.main',
-
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    },
 
     exitLogin: function () {
         this.fireViewEvent('exit');
@@ -40,16 +26,6 @@ Ext.define('Products.view.main.MainController', {
             }
         });
         tabpanel.setActiveTab(tab);
-        // const newTab = Ext.create(Ext.Component, {
-        //     title: 'Товары',
-        //     items: [
-        //         Ext.create('Products.view.main.List')
-        //     ]
-        // })
-        // console.log(newTab);
-        // const tabpanel = this.lookupReference('tabpanel');
-        // console.log(tabpanel.first());
-        // tabpanel.add(newTab);
     },
 
     applyFilter: function(field, e) {
@@ -85,33 +61,4 @@ Ext.define('Products.view.main.MainController', {
     openCard: function(field, cardData) {
         this.fireViewEvent('openCard', cardData);
     }
-
-    // onCellClick: function(elem, td, cellIndex, record, tr, rowIndex) {
-    //     if(cellIndex == 1) {
-    //         const card = Ext.create('Ext.form.Panel', {
-
-    //             region: 'center',
-
-    //             items: [
-    //                 {
-    //                     xtype: 'textfield',
-    //                     name: 'name',
-    //                     label: 'Name'
-    //                 },
-    //                 {
-    //                     xtype: 'textfield',
-    //                     name: 'email',
-    //                     label: 'Email'
-    //                 },
-    //                 {
-    //                     xtype: 'textfield',
-    //                     name: 'password',
-    //                     label: 'Password'
-    //                 }
-    //             ],
-                    
-    //             renderTo: Ext.getBody()
-    //         });
-    //     }
-    // }
 });

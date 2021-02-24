@@ -1,11 +1,6 @@
 Ext.define('Products.view.card.Card', {
 
     extend: 'Ext.window.Window',
-    requires: [
-        'Ext.form.Panel',
-        'Ext.button.Button',
-        'Ext.form.field.Text'
-    ],
     controller: 'card',
 
     bodyPadding: 20,

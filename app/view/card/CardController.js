@@ -5,39 +5,20 @@ Ext.define('Porducts.view.card.CardController', {
     alias: 'controller.card',
 
     saveCardChanges: function() {
-        const store = new Products.store.Productlist;
-        let recordForRemove;
-        console.log(store);
-        store.load(function() {
-            store.each(function(record){
-                console.log(record.data);
-            });
-        })
-        store.load(function() {
-            store.each(function(record){
-                if(record.data.id == 1) {
-                    recordForRemove = record;
-                }
-            });
-        });
-        store.add({id: 5, name: '111'});
-        store.remove(recordForRemove);
-        // Ext.Ajax.request({
-        //     url: '/products.json',
-        //     method: 'POST',
-
-        //     success: function() {
-        //         console.log(1);
-        //     },
-        //     params: {"id": 1, "name": "Notebook Lenovo", "description": "Ноутбук ThinkPad T460 14''FHD", "price": 100, "number": 2}
-        // })
-        store.sync();
-        store.commitChanges();
-        store.load(function() {
-            store.each(function(record){
-                console.log(record.data);
-            });
-        })
+        const store = this.lookupReference('card').up('main').down('grid').getStore();
+        const formData = this.lookupReference('card').getValues();
+        formData.id = this.lookupReference('card').down('displayfield').value.replace(/\D/g, '');
+        const record = store.findRecord('id', +formData.id);
+        if((record.data.price != +formData.price || record.data.number != +formData.number)
+            && (isNaN(formData.price) === false && +formData.price >= 0 && isNaN(formData.number) === false && +formData.number >= 0 && Number.isInteger(+formData.number))) {
+            store.fireEvent('removeRecord', formData);
+            if(!this.warningMessage) {
+                this.warningMessage = Ext.create(Ext.form.field.Display, {
+                    value: 'Данные изменены'
+                })
+                this.lookupReference('card').add(this.warningMessage);
+            }
+        }
     },
 
     closeCard: function() {
